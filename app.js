@@ -32,5 +32,25 @@ function limpiarCaja() {
 function generarNumeroSecreto() {
     return Math.floor(Math.random()*10)+1;
 }
-asignarTextoElemento('h1', 'Juego del número secreto');
-asignarTextoElemento('p', 'Indica un número del 1 al 10');
+
+function condicionesIniciales() {
+    asignarTextoElemento('h1', 'Juego del número secreto');
+    asignarTextoElemento('p', 'Indica un número del 1 al 10');
+    numeroSecreto = generarNumeroSecreto();
+    intentos = 1;
+    
+}
+
+function reiniciarJuego() {
+    // Limpiar caja
+    limpiarCaja();
+    // Indicar mensaje de intervalo de números
+    // Generar el número aleatorio
+    // Inicializar el número de intentos
+    condicionesIniciales();
+    // Deshabilitar el botón de nuevo juego
+    document.querySelector('#reiniciar').setAttribute('disabled', 'true');
+}
+
+condicionesIniciales();
+
